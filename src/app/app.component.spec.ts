@@ -1,11 +1,17 @@
 import { TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        FormsModule,
+        ReactiveFormsModule,
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        
       ],
     }).compileComponents();
   });
@@ -26,6 +32,18 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('login-testing app is running!');
+    expect(compiled.querySelector('span')?.textContent).toContain('login-testing app is running!');
+  });
+
+  it('Espero un resultado inválido del formulario', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    fixture.checkNoChanges();
+
+    let form = app.Loginform;
+
+    let username = app.Loginform.controls ("");
+    let password = app.Loginform.controls("");
   });
 });

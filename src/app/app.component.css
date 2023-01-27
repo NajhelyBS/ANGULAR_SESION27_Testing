@@ -1,0 +1,29 @@
+body {
+    padding: 3em;
+}
+
+form {
+    width: 30em;
+    padding: 2em;
+    border: solid rgb(9, 97, 43) 3px;
+}
+
+#Val {
+    background-color: rgba(0, 128, 0, 0.589);
+}
+
+#Inv {
+    background-color: rgba(255, 0, 0, 0.678);
+    color: rgb(255, 255, 255);
+}
+
+nav {
+    background-color: rgba(51, 131, 20, 0.699);
+}
+
+.nav-link {
+    font-weight: 900;
+    color: rgb(55, 110, 212);
+    -webkit-text-stroke-width: 0.6px;
+    -webkit-text-stroke-color: rgba(255, 237, 73, 0.884);
+}
