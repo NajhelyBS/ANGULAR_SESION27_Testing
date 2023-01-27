@@ -46,6 +46,9 @@ describe('AppComponent', () => {
     let username = app.Loginform.controls['username'];
     let password = app.Loginform.controls['password'];
   
+    username.setValue('Na'); //menos carácteres de los requeridos
+    password.setValue('12'); //menos carácteres de los requeridos
+
     expect(app.Loginform.invalid).toBeTruthy();
 
 
@@ -62,12 +65,11 @@ describe('AppComponent', () => {
     let username = app.Loginform.controls['username'];
     let password = app.Loginform.controls['password'];
     
-    username.setValue('NajhelyBS');
-    password.setValue('123456');
+    username.setValue('NajhelyBS'); //datos que deberían ser aceptados
+    password.setValue('123456'); //datos que deberían ser aceptados
 
     expect(app.Loginform.valid).toBeTruthy();
 
-    
   });
 
 });
