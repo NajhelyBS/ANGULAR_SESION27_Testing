@@ -3,32 +3,32 @@
 
 <form [formGroup]="Loginform" (submit)="send()" class="rounded">
 
-<div *ngIf="valido" id="Val">
+<div *ngIf="valido" id="Val" class="rounded">
   <h2 class="text-center">Datos válidos</h2>
 </div>
 
-<div *ngIf="invalido" id="Inv">
+<div *ngIf="invalido" id="Inv" class="rounded">
   <h2 class="text-center">Datos inválidos</h2>
 </div>
 
 <div>
-  <h2>Login</h2>
+  <h2 style="color:#304418" class="title">Login</h2>
 </div>
   <div>
-    <label> Username </label>
+    <label class="pb-1"> Username </label>
     <input type="text" class="form-control" 
     id="username" #username  formControlName="username" [(ngModel)]="name" >
   </div>
 
   <div class="mt-3">
-    <label> Password</label>
+    <label class="pb-1"> Password</label>
     <input type="password" class="form-control" 
     #password  formControlName="password"  [(ngModel)]="pass">
 
   </div>
 
   <div class="mt-4 pb-2">
-    <button  type="submit" class="btn btn-primary" (click)="Login()">Login</button>
+    <button  type="submit" class="btn btn-success" (click)="Login()">Login</button>
   </div>
 
 </form>
@@ -36,15 +36,18 @@
 
 </body>
 
+<section>
 <div class="text-center" *ngIf="valido">
-  <h3>Inicio de sesión exitoso</h3>
+  <h3 class="inicio pt-1">Inicio de sesión exitoso</h3>
   <div>
-    <ul>
-      <li>Username: {{name}}</li>
-      <li>Password: {{pass}}</li>
+    <ul type="none">
+      <li class="data">Username: {{name}}</li>
+      <li class="data">Password: {{pass}}</li>
     </ul>
   </div>
 </div>
+
+</section>
 
 
 <footer>

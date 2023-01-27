@@ -18,7 +18,12 @@ export class AppComponent {
   public Loginform!: FormGroup;
 
   constructor(private formBuilder:FormBuilder) { 
- 
+    
+    
+    this.Loginform = new FormGroup({
+      username: new FormControl(),
+      password: new FormControl(),
+    })
 
   }
 

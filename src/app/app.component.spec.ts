@@ -39,11 +39,35 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    fixture.checkNoChanges();
+    fixture.detectChanges();
 
-    let form = app.Loginform;
+    let Loginform = app.Loginform;
 
-    let username = app.Loginform.controls ("");
-    let password = app.Loginform.controls("");
+    let username = app.Loginform.controls['username'];
+    let password = app.Loginform.controls['password'];
+  
+    expect(app.Loginform.invalid).toBeTruthy();
+
+
   });
+
+  it('Espero un resultado válido del formulario', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    fixture.detectChanges();
+
+    let Loginform = app.Loginform;
+
+    let username = app.Loginform.controls['username'];
+    let password = app.Loginform.controls['password'];
+    
+    username.setValue('NajhelyBS');
+    password.setValue('123456');
+
+    expect(app.Loginform.valid).toBeTruthy();
+
+    
+  });
+
 });
