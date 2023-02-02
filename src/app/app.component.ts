@@ -42,6 +42,27 @@ export class AppComponent {
     });
   }
 
+
+   // | Mensajes de errores de validación
+   getErrorMessage() {
+    if (this.Loginform.controls['username'].hasError('required')) {
+      return 'The username is required';
+    }
+
+    return this.Loginform.controls['username'].hasError('minlength') ? 'It needs to be at least 4 characters' : '';
+  }
+
+  Messagepassword(){
+    if (this.Loginform.controls['password'].hasError('required')){
+      return 'The password is required';
+    }
+
+    return this.Loginform.controls['password'].hasError('minlength') ? 'It needs to be at least 4 characters' : '';
+
+  }
+
+  //Mensajes de erores de validación |
+
   send(): any{
     console.log(this.Loginform.value);
 

@@ -11,19 +11,21 @@
   <h2 class="text-center">Datos inválidos</h2>
 </div>
 
-<div>
-  <h2 style="color:#304418" class="title">Login</h2>
+<div class="mt-3">
+  <h2 style="color:#304418" class="title">Login <span>{{this.Loginform.valid}}</span></h2>
 </div>
   <div>
     <label class="pb-1"> Username </label>
     <input type="text" class="form-control" 
     id="username" #username  formControlName="username" [(ngModel)]="name" >
+    <p class="mt-1" *ngIf="this.Loginform.controls['username'].invalid">{{getErrorMessage()}}</p>
   </div>
 
   <div class="mt-3">
     <label class="pb-1"> Password</label>
     <input type="password" class="form-control" 
     #password  formControlName="password"  [(ngModel)]="pass">
+    <p class="mt-1"  *ngIf="this.Loginform.controls['password'].invalid">{{Messagepassword()}}</p>
 
   </div>
 

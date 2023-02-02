@@ -74,3 +74,21 @@ section {
     -webkit-text-stroke-width: 0.6px;
     -webkit-text-stroke-color: rgba(255, 237, 73, 0.884);
 }
+
+p {
+    font-size: 15px;
+    background-color: #198754b2;
+    border-radius: 20px;
+    -webkit-text-stroke-width: 0.003px;
+    -webkit-text-stroke-color: #e74934c0;
+    color: #304418;
+    font-weight: 800;
+}
+
+span {
+    background-color: #666815;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #4E8370;
+}
